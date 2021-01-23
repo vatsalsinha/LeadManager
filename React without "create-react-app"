@@ -1,0 +1,50 @@
+frontend/src/components
+frontend/static/frontend
+frontend/templates/frontend
+
+npm init -y
+
+
+npm i -D webpack webpack-cli
+
+npm i -D @babel/core babel-loader @babel/preset-env @babel/preset-react babel-plugin-transform-class-properties
+
+
+npm i react react-dom prop-types
+
+make a file named ".babelrc" in root folder. add the following content:
+	{
+    		"presets": ["@babel/preset-env", "@babel/preset-react"],
+    		"plugins": ["transform-class-properties"]
+	}
+
+
+
+make a file named webpack.config.js. Add:
+module.exports = {
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: "babel-loader"
+                }
+            }
+        ]
+    }
+}
+
+
+
+
+
+in package.json, edit the "scripts": 
+
+"dev": "webpack --mode development ./leadmanager/frontend/src/index.js --output ./leadmanager/frontend/static/frontend/main.js",
+    "build": "webpack --mode production ./leadmanager/frontend/src/index.js --output ./leadmanager/frontend/static/frontend/main.js"
+
+
+
+write your react code. write index.js . write app.js 
+
