@@ -10,4 +10,6 @@ python manage.py migrate
 
 python manage.py makemigrations
 
-python manage.py runserver
+npm run dev (on one terminal)
+
+python manage.py runserver(on other terminal)
